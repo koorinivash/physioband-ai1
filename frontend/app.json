@@ -24,7 +24,12 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "versionCode": 1
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -58,6 +63,11 @@
         }
       ]
     ],
-    "primaryColor": "#00A396"
+    "primaryColor": "#00A396",
+    "extra": {
+      "eas": {
+        "projectId": "1c2a5ab3-ffa5-4862-b47b-e67012246559"
+      }
+    }
   }
 }
