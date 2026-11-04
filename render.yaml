@@ -1,0 +1,38 @@
+# Render Blueprint for the PhysioBand AI backend (FastAPI + ML pipeline).
+# The whole repository is deployed because the backend imports ../ml/src and
+# loads ../ml/saved_models/biceps_curl_quality.pkl.
+services:
+  - type: web
+    name: physioband-ai-api
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install --upgrade pip && pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: MONGODB_URI
+        sync: false            # entered in the Render dashboard, never committed
+      - key: MONGODB_DB_NAME
+        value: physioband_ai
+      - key: MONGODB_TIMEOUT_MS
+        value: "8000"
+      - key: JWT_SECRET_KEY
+        generateValue: true    # Render generates a strong random secret
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "10080"
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: ML_SRC_PATH
+        value: ../ml/src
+      - key: ML_MODEL_PATH
+        value: ../ml/saved_models/biceps_curl_quality.pkl

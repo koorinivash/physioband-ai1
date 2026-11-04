@@ -1,0 +1,251 @@
+{
+  "register_response": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5...",
+    "token_type": "bearer",
+    "expires_in": 604800,
+    "user": {
+      "id": "6aeac003ba18737a91c7a776",
+      "name": "Asha Kumar",
+      "email": "asha@example.com",
+      "created_at": "2026-11-04T05:17:55.102650Z",
+      "profile": {
+        "age": null,
+        "gender": null,
+        "height_cm": null,
+        "weight_kg": null,
+        "dominant_arm": null,
+        "training_arm": null
+      }
+    }
+  },
+  "start_response": {
+    "id": "6aeac003ba18737a91c7a777",
+    "user_id": "6aeac003ba18737a91c7a776",
+    "device_id": null,
+    "exercise_id": "biceps_curl",
+    "exercise_name": "Biceps Curl",
+    "status": "active",
+    "start_time": "2026-11-04T05:17:55.162579Z",
+    "end_time": null,
+    "duration_s": null,
+    "total_reps": 0,
+    "correct_reps": 0,
+    "incorrect_reps": 0,
+    "incomplete_reps": 0,
+    "too_fast_reps": 0,
+    "irregular_reps": 0,
+    "quality_score": null,
+    "avg_tension_n": null,
+    "peak_tension_n": null,
+    "sample_count": 0,
+    "batch_count": 0,
+    "end_reason": null,
+    "suggestions": [],
+    "classification_available": false,
+    "model_dataset_type": null
+  },
+  "sensor_data_request": {
+    "batch_seq": 4,
+    "device_id": "PB-3C61A2F0",
+    "protocol_version": 1,
+    "samples": [
+      {
+        "timestamp_ms": 3997,
+        "ua": [
+          -0.9966,
+          0.0165,
+          0.005,
+          -0.0026,
+          0.1004,
+          0.6697
+        ],
+        "fa": [
+          -0.8275,
+          0.005,
+          0.5428,
+          -0.785,
+          88.5373,
+          -0.3532
+        ],
+        "force_n": 30.3138,
+        "status": 15
+      },
+      {
+        "timestamp_ms": 4018,
+        "ua": [
+          -1.0061,
+          -0.0001,
+          -0.0045,
+          0.8507,
+          -1.5297,
+          1.5641
+        ],
+        "fa": [
+          -0.8604,
+          0.0007,
+          0.519,
+          -0.2687,
+          85.9065,
+          -0.3983
+        ],
+        "force_n": 28.8609,
+        "status": 15
+      }
+    ],
+    "analyze": true
+  },
+  "sensor_data_response": {
+    "session_id": "6aeac003ba18737a91c7a777",
+    "batch_seq": 4,
+    "accepted": true,
+    "duplicate": false,
+    "stored_samples": 50,
+    "total_samples": 250,
+    "analysis": {
+      "exercise_id": "biceps_curl",
+      "mode": "live",
+      "analyzed_at": "2026-11-04T05:17:55.536337Z",
+      "sample_count": 250,
+      "duration_s": 4.98,
+      "total_reps": 1,
+      "correct_reps": 1,
+      "incorrect_reps": 0,
+      "incomplete_reps": 0,
+      "too_fast_reps": 0,
+      "irregular_reps": 0,
+      "unclassified_reps": 0,
+      "quality_score": 100.0,
+      "avg_tension_n": 52.79,
+      "peak_tension_n": 68.56,
+      "classification_available": true,
+      "reps": [
+        {
+          "number": 1,
+          "start_timestamp_ms": 1900.0,
+          "end_timestamp_ms": 4100.0,
+          "duration_s": 2.2,
+          "rom_deg": 106.6,
+          "avg_force_n": 52.79,
+          "peak_force_n": 68.56,
+          "label": "correct",
+          "label_display": "Correct Movement",
+          "confidence": 0.9582,
+          "probabilities": {
+            "correct": 0.9582,
+            "incomplete": 0.0351,
+            "irregular": 0.005,
+            "too_fast": 0.0017
+          },
+          "feedback": "Good repetition: full range of motion with a controlled tempo.",
+          "features": null
+        }
+      ],
+      "new_reps": [
+        {
+          "number": 1,
+          "start_timestamp_ms": 1900.0,
+          "end_timestamp_ms": 4100.0,
+          "duration_s": 2.2,
+          "rom_deg": 106.6,
+          "avg_force_n": 52.79,
+          "peak_force_n": 68.56,
+          "label": "correct",
+          "label_display": "Correct Movement",
+          "confidence": 0.9582,
+          "probabilities": {
+            "correct": 0.9582,
+            "incomplete": 0.0351,
+            "irregular": 0.005,
+            "too_fast": 0.0017
+          },
+          "feedback": "Good repetition: full range of motion with a controlled tempo.",
+          "features": null
+        }
+      ],
+      "live": {
+        "movement_phase": "resting",
+        "upper_arm_status": "stable",
+        "forearm_status": "active",
+        "current_angle_deg": 13.2,
+        "current_force_n": 22.61,
+        "upper_arm_swing_deg": 0.3
+      },
+      "suggestions": [
+        "Excellent consistency. Maintain this tempo and range in your next session."
+      ],
+      "processing_notes": [],
+      "validation": {
+        "input_samples": 250,
+        "valid_samples": 250,
+        "dropped_bad_timestamp": 0,
+        "dropped_duplicates": 0,
+        "out_of_range_values": 0,
+        "missing_values": 0,
+        "issues": []
+      },
+      "model": {
+        "available": true,
+        "algorithm": "RandomForestClassifier",
+        "model_version": "20261104050951",
+        "dataset_type": "synthetic",
+        "validated": false,
+        "status_note": "DEMO MODEL trained on synthetic data. It only demonstrates the software pipeline and is NOT a validated exercise-quality model."
+      }
+    },
+    "analysis_error": null
+  },
+  "complete_response": {
+    "id": "6aeac003ba18737a91c7a777",
+    "user_id": "6aeac003ba18737a91c7a776",
+    "device_id": null,
+    "exercise_id": "biceps_curl",
+    "exercise_name": "Biceps Curl",
+    "status": "completed",
+    "start_time": "2026-11-04T05:17:55.162000Z",
+    "end_time": "2026-11-04T05:18:02.927000Z",
+    "duration_s": 7.8,
+    "total_reps": 8,
+    "correct_reps": 5,
+    "incorrect_reps": 3,
+    "incomplete_reps": 1,
+    "too_fast_reps": 1,
+    "irregular_reps": 1,
+    "quality_score": 62.5,
+    "avg_tension_n": 49.86,
+    "peak_tension_n": 77.94,
+    "sample_count": 2668,
+    "batch_count": 54,
+    "end_reason": "user_completed",
+    "suggestions": [
+      "Use the full range of motion: lower until the elbow is straight and curl until the forearm is near vertical.",
+      "Slow the tempo: take roughly 2 seconds to lift and 2 seconds to lower.",
+      "Keep the movement smooth and keep the upper arm close to the body without swinging."
+    ],
+    "classification_available": true,
+    "model_dataset_type": "synthetic",
+    "feedback": [
+      {
+        "repetition_number": 1,
+        "classification": "correct",
+        "label_display": "Correct Movement",
+        "confidence": 0.9649,
+        "message": "Good repetition: full range of motion with a controlled tempo.",
+        "duration_s": 2.3,
+        "rom_deg": 108.0,
+        "avg_force_n": 51.61,
+        "timestamp": "2026-11-04T05:18:02.924000Z"
+      },
+      {
+        "repetition_number": 2,
+        "classification": "correct",
+        "label_display": "Correct Movement",
+        "confidence": 0.995,
+        "message": "Good repetition: full range of motion with a controlled tempo.",
+        "duration_s": 2.36,
+        "rom_deg": 132.3,
+        "avg_force_n": 56.86,
+        "timestamp": "2026-11-04T05:18:02.924000Z"
+      }
+    ]
+  }
+}

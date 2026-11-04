@@ -1,0 +1,89 @@
+{
+  "labels": [
+    "correct",
+    "incomplete",
+    "irregular",
+    "too_fast"
+  ],
+  "accuracy": 1.0,
+  "per_class": {
+    "correct": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 30
+    },
+    "incomplete": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 30
+    },
+    "irregular": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 30
+    },
+    "too_fast": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 30
+    }
+  },
+  "macro_avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "weighted_avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "confusion_matrix": [
+    [
+      30,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      30,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      30,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      30
+    ]
+  ],
+  "test_samples": 120,
+  "split_method": "participant-wise (GroupShuffleSplit)",
+  "train_participants": [
+    "SYN-P01",
+    "SYN-P03",
+    "SYN-P04",
+    "SYN-P05",
+    "SYN-P07",
+    "SYN-P08",
+    "SYN-P10"
+  ],
+  "test_participants": [
+    "SYN-P02",
+    "SYN-P06",
+    "SYN-P09"
+  ],
+  "dataset_type": "synthetic",
+  "status_note": "DEMO MODEL trained on synthetic data. It only demonstrates the software pipeline and is NOT a validated exercise-quality model."
+}

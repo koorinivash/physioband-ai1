@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "PhysioBand AI",
+    "slug": "physioband-ai",
+    "scheme": "physioband",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F3F7FB",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.physioband.ai",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "PhysioBand AI uses Bluetooth to receive movement and band-tension data from your PhysioBand sensors."
+      }
+    },
+    "android": {
+      "package": "com.physioband.ai",
+      "adaptiveIcon": {
+        "backgroundColor": "#021C40",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#F3F7FB"
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "neverForLocation": true,
+          "bluetoothAlwaysPermission": "PhysioBand AI uses Bluetooth to receive movement and band-tension data from your PhysioBand sensors."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "primaryColor": "#00A396"
+  }
+}
