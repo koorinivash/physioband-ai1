@@ -4,7 +4,7 @@
  *   EXPO_PUBLIC_API_URL=https://your-backend.example.com/api/v1
  */
 /** Hosted backend on Render (see render.yaml). Can be changed inside the app on the sign-in screen. */
-export const DEFAULT_API_URL = 'https://physioband-ai1-1.onrender.com/api/v1';
+export const DEFAULT_API_URL = 'https://physioband-ai1-2.onrender.com/api/v1';
 
 /** Server URL baked in at build time; the user can override it at runtime (stored on the device). */
 export const API_URL = (process.env.EXPO_PUBLIC_API_URL ?? DEFAULT_API_URL).replace(/\/$/, '');

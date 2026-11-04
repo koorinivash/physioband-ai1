@@ -3,7 +3,7 @@
 # loads ../ml/saved_models/biceps_curl_quality.pkl.
 services:
   - type: web
-    name: physioband-ai1-1
+    name: physioband-ai1-2
     runtime: python
     plan: free
     region: singapore
