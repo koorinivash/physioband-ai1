@@ -27,6 +27,12 @@ log = logging.getLogger(__name__)
 def create_app(connect_database: bool = True) -> FastAPI:
     settings = get_settings()
     configure_logging(settings.log_level)
+    if not settings.jwt_secret_key.strip():
+        # PyJWT refuses empty HMAC keys, so every login/register would fail with a 500.
+        raise RuntimeError(
+            "JWT_SECRET_KEY is empty. Set it to a long random value, e.g. "
+            "python -c \"import secrets; print(secrets.token_urlsafe(48))\""
+        )
     if len(settings.jwt_secret_key) < 32 or settings.jwt_secret_key in ("change-me-in-env", "replace-with-a-long-random-secret"):
         if settings.environment == "production":
             raise RuntimeError("JWT_SECRET_KEY must be set to a strong random value in production")
