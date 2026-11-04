@@ -86,6 +86,24 @@ backend\.venv\Scripts\python.exe scripts\simulate_device.py --api http://localho
 Free instances sleep after ~15 min without traffic; the first request then takes up to about a minute.
 Open `/health` a minute before a demonstration to wake the service.
 
+## Building the Android APK (EAS cloud build)
+
+`frontend/eas.json` has a `preview` profile that produces an installable `.apk` with the Render URL
+`https://physioband-ai-api.onrender.com/api/v1` built in. No Android Studio is needed.
+
+```powershell
+cd frontend
+npx eas-cli@latest login                 # free Expo account (expo.dev)
+npx eas-cli@latest build:configure       # first time only: links the project to your account
+npx eas-cli@latest build -p android --profile preview
+```
+
+The build runs on Expo's servers (about 10-20 minutes). When it finishes, the terminal and expo.dev show a
+download link / QR code for the `.apk`. Open it on the phone and allow "Install unknown apps".
+
+If your Render service gets a different URL, you do not need to rebuild: on the sign-in screen tap the server
+address at the bottom, enter `https://<your-service>.onrender.com` and press Save (`/api/v1` is added automatically).
+
 ## Branding
 
 All app assets come from the official logo (`frontend/assets/logo-source.webp`): `icon.png` (opaque, full-bleed),
